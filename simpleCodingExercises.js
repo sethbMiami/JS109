@@ -84,3 +84,50 @@ console.log(objToStr(newSample));
 console.log(objToStr(outOfOrderSampleObj));
 //let newObj = {a: 1, k: 3, g: 2};
 //console.log(Object.keys(newObj)[0]); access key
+
+//Create a function that takes a string as an argument and returns a number of words in that string
+
+//     countWords('hello world'); // => 2
+
+const countWords = (string) => {
+  return string.split(' ').length;
+};
+
+console.log(countWords('hello world! here i am'));
+
+//Create a function that takes a string as an argument and returns an object containing
+//all of the words from the string and count occurrences of that word.
+
+//      countWords('Hello, hello wolrd'); // => {'hello' : 2, 'world' : 1};
+
+const countWordsObject = (string) => {
+  let wordsObject = {};
+  let wordsArray = string.replace(/[^a-zA-Z ]/g, "").split(" ");
+
+  wordsArray.forEach((item) => {
+    wordsObject[item] = (wordsObject[item] || 0) + 1;
+  });
+
+  return wordsObject;
+};
+
+console.log(countWordsObject('hello, world. hello !@world. world! hello'));
+
+//Create a function that takes two strings as an argument and returns a number representing occurrences
+//of the second argument as a sub-string of the first argument, for example:
+//        countSubstr('Hello, Hello! How are you doing Mellody?', 'ello' );// => 3
+
+
+const countSubString = (string1, string2) => {
+  let count = 0;
+  let array = string1.split(" ");
+
+
+  array.forEach((word) => {
+    count += word.includes(string2) ? 1 : 0;
+  });
+  return count;
+};
+
+
+console.log(countSubString('Hello, Hello! How are you doing Mellody?', 'ello'));
