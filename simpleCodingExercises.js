@@ -133,6 +133,9 @@ const countSubString = (string1, string2) => {
 
 
 console.log(countSubString('Hello, Hello! How are you doing Mellody mellow?', 'ello'));
+=======
+console.log(countSubString('Hello, Hello! How are you doing Mellody?', 'ello'));
+
 
 //JavaScript Problem Solving with PEDAC study session
 
@@ -151,12 +154,22 @@ const anagrams = (string, array) => {
     }
   });
   return anagramsArray;
+=======
+  let newArray = [];
+
+  for (let word of array) {
+    if (sortLowerCaseString(string) === sortLowerCaseString(word)) {
+      newArray.push(word);
+    }
+  }
+  return newArray;
 };
 
 // Test cases
 console.log(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']));
 console.log(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']));
 
+=======
 // ['aabb', 'bbaa']
 
 console.log(anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']));
@@ -213,3 +226,5 @@ const countDuplic = (string) => {
 
 console.log(countDuplic('one two one three two')); //=> 2
 console.log(countDuplic('flower cat cat dog flower dog cow horse cow dog cat cow fish')); //=> 3
+=======
+// []
