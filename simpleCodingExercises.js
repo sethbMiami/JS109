@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 /* eslint-disable max-len */
 //scrap paper
 
@@ -102,7 +103,8 @@ console.log(countWords('hello world! here i am'));
 
 const countWordsObject = (string) => {
   let wordsObject = {};
-  let wordsArray = string.replace(/[^a-zA-Z ]/g, "").split(" ");
+  let wordsArray = string.replace(/[^a-zA-Z ]/g, "")
+                         .split(" ");
 
   wordsArray.forEach((item) => {
     wordsObject[item] = (wordsObject[item] || 0) + 1;
@@ -130,4 +132,84 @@ const countSubString = (string1, string2) => {
 };
 
 
-console.log(countSubString('Hello, Hello! How are you doing Mellody?', 'ello'));
+console.log(countSubString('Hello, Hello! How are you doing Mellody mellow?', 'ello'));
+
+//JavaScript Problem Solving with PEDAC study session
+
+const sortLowerCaseString = (string) => {
+  return string.toLowerCase().split("")
+                             .sort()
+                             .join("");
+};
+
+const anagrams = (string, array) => {
+  let anagramsArray = [];
+
+  array.forEach((word) => {
+    if (sortLowerCaseString(string) === sortLowerCaseString(word)) {
+      anagramsArray.push(word);
+    }
+  });
+  return anagramsArray;
+};
+
+// Test cases
+console.log(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']));
+console.log(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']));
+
+// ['aabb', 'bbaa']
+
+console.log(anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']));
+// ['carer', 'racer']
+
+console.log(anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'Racer']));
+// ['carer', 'Racer']
+
+console.log(anagrams('laser', ['lazing', 'lazy',  'lacer']));
+// []
+
+let a = 5;
+let b = a;
+b = 6;
+console.log(a, b);
+
+let arr = [1, 2];
+let brr = arr;
+brr.push(5, 6);
+console.log(arr, brr);
+/*
+P
+Create a function that takes a string as an argument and returns a number representing number of
+words that occurred more than once in that string:
+
+E
+n/a
+
+D
+Input string
+output number
+array
+
+A
+main function
+Takes 1 paremter (string)
+split array into string of words
+filter the array down to duplicates
+*/
+
+const countDuplic = (string) => {
+  let wordsArray = string.split(" ");
+  let wordsObject = {};
+
+  wordsArray.forEach((item) => {
+    wordsObject[item] = (wordsObject[item] || 0) + 1;
+  });
+
+  let keysArray = Object.values(wordsObject);
+  let count = keysArray.filter((item) => item > 1);
+
+  return count.length;
+};
+
+console.log(countDuplic('one two one three two')); //=> 2
+console.log(countDuplic('flower cat cat dog flower dog cow horse cow dog cat cow fish')); //=> 3
