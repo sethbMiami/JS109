@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 /* eslint-disable max-len */
 //scrap paper
 
@@ -102,7 +103,8 @@ console.log(countWords('hello world! here i am'));
 
 const countWordsObject = (string) => {
   let wordsObject = {};
-  let wordsArray = string.replace(/[^a-zA-Z ]/g, "").split(" ");
+  let wordsArray = string.replace(/[^a-zA-Z ]/g, "")
+                         .split(" ");
 
   wordsArray.forEach((item) => {
     wordsObject[item] = (wordsObject[item] || 0) + 1;
@@ -131,3 +133,35 @@ const countSubString = (string1, string2) => {
 
 
 console.log(countSubString('Hello, Hello! How are you doing Mellody?', 'ello'));
+
+//JavaScript Problem Solving with PEDAC study session
+
+const sortLowerCaseString = (string) => {
+  return string.toLowerCase().split("")
+                             .sort()
+                             .join("");
+};
+
+const anagrams = (string, array) => {
+  let newArray = [];
+
+  for (let word of array) {
+    if (sortLowerCaseString(string) === sortLowerCaseString(word)) {
+      newArray.push(word);
+    }
+  }
+  return newArray;
+};
+
+// Test cases
+console.log(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']));
+// ['aabb', 'bbaa']
+
+console.log(anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']));
+// ['carer', 'racer']
+
+console.log(anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'Racer']));
+// ['carer', 'Racer']
+
+console.log(anagrams('laser', ['lazing', 'lazy',  'lacer']));
+// []
