@@ -133,9 +133,6 @@ const countSubString = (string1, string2) => {
 
 
 console.log(countSubString('Hello, Hello! How are you doing Mellody mellow?', 'ello'));
-=======
-console.log(countSubString('Hello, Hello! How are you doing Mellody?', 'ello'));
-
 
 //JavaScript Problem Solving with PEDAC study session
 
@@ -154,22 +151,12 @@ const anagrams = (string, array) => {
     }
   });
   return anagramsArray;
-=======
-  let newArray = [];
-
-  for (let word of array) {
-    if (sortLowerCaseString(string) === sortLowerCaseString(word)) {
-      newArray.push(word);
-    }
-  }
-  return newArray;
 };
 
 // Test cases
 console.log(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']));
 console.log(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']));
 
-=======
 // ['aabb', 'bbaa']
 
 console.log(anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']));
@@ -207,7 +194,10 @@ A
 main function
 Takes 1 paremter (string)
 split array into string of words
-filter the array down to duplicates
+loop thru array and create object with word as key and number of occurences as value
+assign the object values to valuesArray
+assign count to the array filtered down to values greater than 1
+return the length of that array
 */
 
 const countDuplic = (string) => {
@@ -218,13 +208,107 @@ const countDuplic = (string) => {
     wordsObject[item] = (wordsObject[item] || 0) + 1;
   });
 
-  let keysArray = Object.values(wordsObject);
-  let count = keysArray.filter((item) => item > 1);
+  let valuesArray = Object.values(wordsObject);
+  let count = valuesArray.filter((item) => item > 1);
 
   return count.length;
 };
 
 console.log(countDuplic('one two one three two')); //=> 2
 console.log(countDuplic('flower cat cat dog flower dog cow horse cow dog cat cow fish')); //=> 3
-=======
-// []
+
+
+function replace(str, value) {
+  while (true) {
+    break;
+  }
+
+  str = value;
+}
+
+let greet = "Hey!";
+replace(greet, "Hello");
+console.log(greet);
+
+let munstersDescription = "the Munsters are CREEPY and Spooky.";
+// => The munsters are creepy and spooky.
+
+let newMunstersDescription = munstersDescription[0].toUpperCase() + munstersDescription.slice(1).toLowerCase();
+
+console.log(newMunstersDescription);
+
+let ages = { Herman: 32, Lily: 30, Grandpa: 5843, Eddie: 10 };
+
+let additionalAges = { Marilyn: 22, Spot: 237 };
+
+Object.assign(ages, additionalAges);
+console.log(ages);
+
+let flintstones = ["Fred", "Barney", "Wilma", "Betty", "Bambam", "Pebbles"];
+flintstones.push("Dino", "Dupe", "loop");
+console.log(flintstones);
+
+let advice = "Few things in life are as important as house training your pet dinosaur.";
+
+// Expected return value:
+// => 'Few things in life are as important as '
+let newAdvice = advice.slice(0, advice.indexOf('house'));
+console.log(newAdvice);
+
+let advice2 = "Few things in life are as important as house training your pet dinosaur.";
+let advice3 = advice2.replace('important', 'urgent');
+console.log(advice3);
+
+
+let numbers = [1, 2, 3, 4, 5];
+numbers.slice().reverse();
+console.log(numbers); // [ 5, 4, 3, 2, 1 ]
+
+numbers = [1, 2, 3, 4, 5];
+let sortedNumbers = [...numbers].sort((num1, num2) => num2 - num1);
+console.log(sortedNumbers);
+console.log(numbers); // [ 5, 4, 3, 2, 1 ]
+
+let famousWords = "seven years ago...";
+let beginningFamousWords = "Four score and ";
+
+console.log(beginningFamousWords + famousWords);
+
+let removeIndex2 = [1, 2, 3, 4, 5];
+removeIndex2.splice(2, 1);
+console.log(removeIndex2);
+
+let nestedArray = ["Fred", "Wilma", ["Barney", "Betty"], ["Bambam", "Pebbles"]];
+console.log(nestedArray.flat());
+const flattened = nestedArray.reduce((acc, cur) => acc.concat(cur), []);
+console.log([].concat(...nestedArray));
+console.log(flattened);
+
+let flintstones2 = { Fred: 0, Wilma: 1, Barney: 2, Betty: 3, Bambam: 4, Pebbles: 5 };
+let barneyArray = [];
+barneyArray.push(Object.keys(flintstones2)[2], flintstones2.Barney);
+
+//let test5 = Object.entries(flintstones2).filter(pair => pair[0] === "Barney").shift();
+let test5 = Object.entries(flintstones2).filter(pair => pair.includes("Barney")).shift();
+
+console.log(barneyArray);
+console.log(test5);
+
+let numbers2 = [1, 2, 3, 4]; // true
+let table = { field1: 1, field2: 2, field3: 3, field4: 4 }; // false
+
+console.log(Array.isArray(numbers2));
+console.log(Array.isArray(table));
+
+let title = "Flintstone Family Members";
+let titleCenter = (40 - title.length) / 2;
+console.log(title.padStart(titleCenter + title.length));
+
+let statement1 = "The Flintstones Rock!";
+let statement2 = "Easy come, easy go.";
+
+let lowerT = statement1.match(/t/g).length;
+let lowerT2 = statement2.split('').filter((letter) => letter === 't').length;
+
+console.log(lowerT);
+console.log(lowerT2);
