@@ -312,3 +312,18 @@ let lowerT2 = statement2.split('').filter((letter) => letter === 't').length;
 
 console.log(lowerT);
 console.log(lowerT2);
+
+
+let stringTest = "Replace every word that is important with urgent";
+
+let stringTestArray = stringTest.split(" ");
+
+stringTestArray.forEach((item) => {
+  if (item === 'important') {
+    stringTestArray[item] = 'urgent';
+  }
+});
+
+let newString = stringTestArray.join();
+
+console.log(newString);
