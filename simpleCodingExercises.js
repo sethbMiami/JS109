@@ -327,3 +327,32 @@ stringTestArray.forEach((item) => {
 let newString = stringTestArray.join();
 
 console.log(newString);
+
+function findCommonKeysInSpecificRange(obj1, obj2, minRange, maxRange) {
+  // Initialize an empty array to store common keys
+  let commonKeys = [];
+
+  // Iterate through the keys of obj1
+  for (let key in obj1) {
+    // Check if the key is within the specified range
+    if (Number(key) >= minRange && Number(key) <= maxRange) {
+      // Check if the key is present in obj2 and both values are greater than 1
+      if (obj2.hasOwnProperty(key) && obj1[key] > 1 && obj2[key] > 1) {
+        commonKeys.push(key);
+      }
+    }
+  }
+
+  return commonKeys;
+}
+
+let obj1 = { 1: 1, 2: 2, 3: 1 };
+let obj2 = { 1: 2, 2: 3, 3: 2 };
+
+let minRange = 1;
+let maxRange = 2;
+
+let commonKeys = findCommonKeysInSpecificRange(obj1, obj2, minRange, maxRange);
+
+console.log(commonKeys);
+// Output: [2]
