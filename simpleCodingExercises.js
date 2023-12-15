@@ -387,3 +387,20 @@ let swapCase = (string) => {
 };
 
 console.log(swapCase(munstersDescription2));
+
+function factors(number) {
+  let factors = [];
+
+  if (number % 2 === 0 && number > 0) {
+    for (let index = number; index >= 1; index /= 2) {
+      factors.push(index);
+    }
+  } else {
+    console.log("enter valid num");
+  }
+
+  return factors;
+}
+console.log(factors(-4));
+console.log(3 + 4);
+console.log(3 + '4');

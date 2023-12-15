@@ -26,24 +26,28 @@ let output = 10;
 const logger = () => {
   // do i have local variable
   output = 5;
-}
+};
 
 logger();
 console.log(output); // 5
 
+//This code demonstrates variable scope because when the function logger is invoked on line 31, it will reassign the global variable
+//output on line 24 from 10 to a value of 5. This is because the variable output on line 28 was not declared with a let or const, therefore
+// it is a global variable and has access to the variable on line 24. Then on line 32 the console.log method is invoked printing the
+//value of output to the console, which is 5.
 
 // What will be the output on the last line of code? What concept does it demonstrate? -- Derek
 function addOne(num) {
-  return num + 1
+  return num + 1;
 }
 
 function mutater(adder) {
-  adder['a'] = 'mutated'
+  adder['a'] = 'mutated';
 }
 
 mutater(addOne);
 console.log(addOne.a);
-// when run the code will output `mutated` to the console. 
+// when run the code will output `mutated` to the console.
 // this demonstrates the concept of mutability of objects, even though addOne was defined
 // at the top as a function, it is an object and passed by reference to the function mutater as an argument when called, then inside mutater it is assigned to property `a` using 
 // brackets as an accessor and thus mutating the original object. Then the object property is accessed with dot notation and logged to the console
@@ -55,8 +59,8 @@ function world(string) {
   return string;
 }
 
-const shout = (toShout) => `${toShort()}!`;   // toShout == () => 'world'()
-console.log(shout(world)); 
+const shout = (toShout) => `${toShout()}!`;   // toShout == () => 'world'()
+console.log(shout(world));
 
 /* Shukastar
 2 Functions are being declared in lines 49 and 50. The first function just returns a string `world` whenever it's called
