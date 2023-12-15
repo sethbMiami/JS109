@@ -356,3 +356,34 @@ let commonKeys = findCommonKeysInSpecificRange(obj1, obj2, minRange, maxRange);
 
 console.log(commonKeys);
 // Output: [2]
+
+
+let stringRepeat = "The Flintstones Rock!";
+
+for (let index = 0; index < 10; index++) {
+  console.log(" ".repeat(index) + stringRepeat);
+}
+// The Flintstones Rock!
+//  The Flintstones Rock!
+//   The Flintstones Rock!
+//    The Flintstones Rock!
+//     ...
+
+
+//swap casings
+let munstersDescription2 = "The Munsters are creepy and spooky.";
+
+let swapCase = (string) => {
+  let reverseCaseString = "";
+  string.split("").forEach((char) => {
+    if (char === char.toLowerCase()) {
+      reverseCaseString += char.toUpperCase();
+    } else {
+      reverseCaseString += char.toLowerCase();
+    }
+  });
+
+  return reverseCaseString;
+};
+
+console.log(swapCase(munstersDescription2));
