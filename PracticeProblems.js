@@ -64,3 +64,24 @@ console.log(newAdvice);
 // Expected return value:
 // => 'Few things in life are as important as '
 
+function factors(number) {
+  let divisor = number;
+  let factors = [];
+  while (divisor > 0) {
+    if (number % divisor === 0) {
+      factors.push(number / divisor);
+    }
+    divisor -= 1;
+  }
+  return factors;
+}
+
+console.log(factors(10));
+
+let testArray = [1, 2, 3];
+testArray.push(4);
+testArray = testArray.concat(5);
+console.log(testArray);
+let secondArray = [6, 7, 8];
+let combinedArray = [...testArray, ...secondArray];
+console.log(combinedArray);

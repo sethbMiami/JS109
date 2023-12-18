@@ -404,3 +404,19 @@ function factors(number) {
 console.log(factors(-4));
 console.log(3 + 4);
 console.log(3 + '4');
+
+function returnNumber(anything) {
+  return 6;
+}
+
+console.log(returnNumber('hi'));
+console.log(returnNumber(false));
+console.log(returnNumber([1, 3, 5]));
+console.log(returnNumber({a: 2, b: 3}));
+
+let smallArray = [];
+smallArray.length = 5;
+console.log(smallArray);
+smallArray[2] = 8;
+console.log(smallArray);
+

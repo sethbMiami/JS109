@@ -57,3 +57,13 @@ let myObject = {
 console.log(`${myObject.name} says ${myObject.sayHello()}`);
 console.log(myObject.sayGoodbye());
 console.log(myObject);
+console.log(Math.ceil(1705 / 100));
+
+let steve = 'steven';
+
+function capitilize(word) {
+	steve = steve[0].toUpperCase();
+}
+
+capitilize(steve);
+console.log(steve); // => 'Steven';
