@@ -420,3 +420,25 @@ console.log(smallArray);
 smallArray[2] = 8;
 console.log(smallArray);
 
+
+//Create a function that takes an array as an argument and returns the same array with
+//all elements sorted in alphabetical order. For example:
+
+const sorting = (array) => {
+  return array.sort();
+};
+
+let sort1 = ['a', 'd', 'a', 'b']; //=> ['a', 'a', 'b', 'd'];
+let sort2 = ['banana', 'apple', 'pear']; //=> ['apple', 'banana', 'pear']
+console.log(sorting(sort1));
+console.log(sorting(sort2));
+
+//Create a function that takes an array as an argument and returns the same array
+//with all elements sorted in descending order. For example:
+
+const sortDescending = (array) => {
+  return array.sort((a, b) => b - a);
+};
+
+let testSort = [3,5,1,2,11,456]; //=> [456,11,5,3,2,1];
+console.log(sortDescending(testSort));

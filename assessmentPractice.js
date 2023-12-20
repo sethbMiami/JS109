@@ -62,8 +62,26 @@ console.log(Math.ceil(1705 / 100));
 let steve = 'steven';
 
 function capitilize(word) {
-	steve = steve[0].toUpperCase();
+  return word[0].toUpperCase() + word.slice(1);
 }
 
-capitilize(steve);
+steve = capitilize(steve);
 console.log(steve); // => 'Steven';
+
+let scottishCities = ['Edinburgh', 'Glasgow', 'Dundee', 'Aberdeen', 'Inverness'];
+
+const myFavCity = scottishCities[3];
+
+let britishCities = scottishCities;
+
+scottishCities = britishCities.push('Manchester', 'London', 'Bristol', 'Cardiff', 'Belfast');
+
+let goodCities = britishCities.slice(2, 4);
+
+britishCities.push(goodCities);
+
+console.log(scottishCities);
+console.log(myFavCity);
+console.log(goodCities);
+console.log(britishCities);
+
