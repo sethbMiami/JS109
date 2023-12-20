@@ -498,3 +498,26 @@ const sortObjectValueDescending = (array) => {
 };
 
 console.log(sortObjectValueDescending(arrayOfObjects));
+
+let nestedArrays = [[1,2,3], [0,1], [2,1]]; //=> [[0,1], [2,1], [1,2,3]]
+
+const sortNestedArray = (array) => {
+  return array.sort((a, b) => a.reduce((acc, curVal) => acc + curVal) - b.reduce((acc, curVal) => acc + curVal));
+};
+
+console.log(sortNestedArray(nestedArrays));
+
+const emphasize = str => str + "!!!";
+
+let word = emphasize("hello");
+
+console.log(word);
+
+let dude = [1, 2, 3];
+let meen = [4, 5];
+
+console.log([1, 2, 3] + [4, 5]);
+console.log('2' - '2');
+console.log('2' / '2');
+console.log({a: 1, b: 2} + {c: 3});
+console.log('2' + 2);
