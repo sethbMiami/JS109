@@ -442,3 +442,59 @@ const sortDescending = (array) => {
 
 let testSort = [3,5,1,2,11,456]; //=> [456,11,5,3,2,1];
 console.log(sortDescending(testSort));
+
+
+//rewrite this to use one bool and only 1 return statement
+
+function isColorValid(color) {
+  if (color === "blue" || color === "green") {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function isColorCool(color) {
+  return color === 'blue' || color === 'green';
+}
+
+console.log(isColorValid('blue'));
+console.log(isColorCool('blue'));
+console.log(isColorValid('red'));
+console.log(isColorCool('red'));
+
+//Create a function that takes an array of strings as an argument and returns the
+//same array with all elements sorted according to length of the string in ascending order. For example:
+
+const sortingStringArray = (array) => {
+  return array.sort((a, b) => a.length - b.length);
+};
+
+let testSortArray = (['o', 'hello', 'llo', 'ello','lo' ]); // => ['o', 'lo', 'llo', 'ello', 'hello']
+
+console.log(sortingStringArray(testSortArray));
+
+const sortStringDescending = (array) => {
+  return array.sort((a, b) => b.length - a.length);
+};
+
+console.log(sortStringDescending(testSortArray));
+
+//objects
+
+//Create a function that takes an array of objects as argument and return the same
+//array with all the elements sorted according to it's value in ascending order. For example:
+
+let arrayOfObjects = [{a: 1}, {a: 0}, {a : 3}]; //=> [{a:0}, {a:1}, {a:3}];
+
+const sortObjectValues = (array) => {
+  return array.sort((a, b) => a['a'] - b['a']);
+};
+
+console.log(sortObjectValues(arrayOfObjects));
+
+const sortObjectValueDescending = (array) => {
+  return array.sort((a, b) => b['a'] - a['a']);
+};
+
+console.log(sortObjectValueDescending(arrayOfObjects));
